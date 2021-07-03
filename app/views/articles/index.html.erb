@@ -1,0 +1,10 @@
+<h1>Tous les articles</h1>
+
+<%= link_to "Ajouter un article", new_article_path %>
+
+<% @articles.each do |article| %>
+  <%= link_to article_path(article.id) do %>
+    <h3> <%= article.title %> </h3>
+    <p> <%= truncate(article.content, length: 30) %> </p>
+  <% end %>
+<% end %>
